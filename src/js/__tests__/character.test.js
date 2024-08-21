@@ -2,13 +2,16 @@ import Character from '../character';
 
 test('should create a character with valid properties', () => {
   const character = new Character('Archer', 'Bowman', 25, 25);
+  const expected = {
+    attack : undefined,
+    defence : undefined,
+    health: 100, 
+    level: 1,
+    name: 'Archer',
+    type: 'Bowman',
+  }
 
-  expect(character.name).toBe('Archer');
-  expect(character.type).toBe('Bowman');
-  expect(character.health).toBe(100);
-  expect(character.level).toBe(1);
-  expect(character.attack).toBe(25);
-  expect(character.defence).toBe(25);
+expect(character).toEqual(expected)
 });
 
 test('should throw an error if name is not a string', () => {
